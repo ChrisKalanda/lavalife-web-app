@@ -1,0 +1,245 @@
+﻿/* ===== LAYOUT GÉNÉRAL TYPE LOGIN / REGISTER ===== */
+
+/* Wrapper commun à toutes les pages "modernes" */
+.page-shell {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    background: #050608;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+   
+    .page-shell .page-left {
+        position: relative;
+        background: linear-gradient(180deg, rgba(216,27,96,0.92), rgba(176,23,79,0.92)), url('/Content/lavalifeAcceuil.png') center no-repeat;
+        color: #fff;
+        padding: 60px 40px;
+    }
+
+    
+    .page-shell .page-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+
+.page-card {
+    width: 100%;
+    max-width: 460px;
+    background: #111;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .75);
+}
+
+    
+    .page-card h1,
+    .page-card h2 {
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+
+.page-subtitle {
+    color: #bbb;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        margin-bottom: 6px;
+        color: #f5f5f5;
+    }
+
+
+.page-card input[type="text"],
+.page-card input[type="password"],
+.page-card input[type="email"],
+.page-card textarea,
+.page-card select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+
+.page-card .btn-main,
+.page-card input[type="submit"],
+.page-card input[type="button"],
+.page-card button {
+    display: inline-block;
+    width: 100%;
+    margin-top: 8px;
+    background: #ff2727;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Messages info / erreur */
+.page-info {
+    color: #2ecc71;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.page-error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+
+#txtBody {
+    resize: none;
+    height: 120px;
+}
+
+/* ========================================================= */
+/*            PROFIL – mise en page type Login/Register      */
+/* ========================================================= */
+
+.profile-page .page-card {
+    max-width: 900px; /* un peu plus large pour afficher les champs */
+}
+
+/* Liste des champs (label / valeur sur la même ligne) */
+.profile-panel p {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.profile-panel .field-label {
+    font-weight: 600;
+    color: #ccc;
+}
+
+.profile-panel .field-value {
+    font-weight: 400;
+    color: #fff;
+}
+
+/* ========================================================= */
+/*            MEMBERS – même look Login/Register             */
+/* ========================================================= */
+
+.members-page .page-card {
+    max-width: 900px;
+}
+
+/* Ligne d’un membre */
+.member-row {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.member-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ff3333;
+    color: #fff;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+}
+
+.member-name {
+    font-weight: 600;
+    display: block;
+    font-size: 15px;
+}
+
+.member-meta {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.member-actions .btn-main {
+    padding: 6px 14px;
+    font-size: 13px;
+    width: auto;
+}
+
+/* ========================================================= */
+/*            SEARCH – filtre + résultats                    */
+/* ========================================================= */
+
+.search-page .page-card {
+    max-width: 980px;
+}
+
+/* grille de filtres */
+.search-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+}
+
+/* Champ Ville sur toute la largeur */
+.search-page .form-group-full {
+    grid-column: 1 / -1;
+}
+
+.search-results {
+    margin-top: 32px;
+}
+
+/* tableau de résultats */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+    .results-table th,
+    .results-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .results-table th {
+        text-align: left;
+        font-weight: 600;
+    }
+
+/* ========================================================= */
+/*            PAGES "MODIFIER PROFIL", INBOX, COMPOSE        */
+/*            (elles réutilisent aussi page-shell / card)    */
+/* ========================================================= */
+
+.edit-profile-page .page-card,
+.inbox-page .page-card,
+.compose-page .page-card {
+    max-width: 700px;
+}

@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="lavaCloneWF.Site" %>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Friendbook - Lavalife Style</title>
+
+    <style>
+        body { margin: 0; background: #F5F5F5; font-family: Arial; }
+
+        /* HEADER */
+        .header {
+            background: #d70023;
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+       
+        .landing {
+            min-height: calc(100vh - 40px);
+            display: flex;
+            align-items: stretch;
+        }
+        .landing-left {
+            flex: 1;
+            background: #b0001a;
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .landing-left h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .landing-left p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .landing-right {
+            flex: 1;
+            background: linear-gradient(180deg, #607D8B, #CFD8DC);
+            color: white;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .landing-right h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .landing-right p {
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main-big {
+            display: inline-block;
+            padding: 15px 45px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-red {
+            background: #ff0000;
+            color: white;
+        }
+        .btn-white {
+            background: white;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+        }
+
+        /* CONTENT */
+        .content {
+            width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        /* DASHBOARD */
+        .dashboard-title {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+        .dashboard-menu a {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            padding: 8px 18px;
+            background: #d70023;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #222;
+            color: #aaa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form runat="server">
+
+        <!-- HEADER (sera caché sur la landing si pas connecté) -->
+        <asp:Panel ID="pnlHeader" runat="server" CssClass="header">
+            <div class="logo">
+                <a href="~/Default.aspx" runat="server" style="color:white;text-decoration:none;">
+                    Lavalife
+                </a>
+            </div>
+
+            <div>
+                <a href="~/Default.aspx" runat="server">Accueil</a>
+                <a href="~/Default.aspx" runat="server">Mon espace</a>
+                <a href="~/Members.aspx" runat="server">Membres</a>
+                <a href="~/Search.aspx" runat="server">Recherche</a>
+                <a href="~/Messages/Inbox.aspx" runat="server">Messages</a>
+                <a href="~/Accounts/Profil.aspx" runat="server">Profil</a>
+                <a href="~/Accounts/ModifierProfil.aspx" runat="server">Modifier</a>
+            </div>
+        </asp:Panel>
+
+        <!-- Contenu spécifique à chaque page -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <!-- FOOTER -->
+        <asp:Panel ID="pnlFooter" runat="server" CssClass="footer">
+            © 2025 Friendbook - Projet Lavalife
+        </asp:Panel>
+
+    </form>
+</body>
+</html>
