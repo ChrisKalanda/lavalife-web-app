@@ -102,6 +102,7 @@
     <Content Include="About.aspx" />
     <Content Include="Accounts\Login.aspx" />
     <Content Include="Accounts\Logout.aspx" />
+    <Content Include="Content\auth-premium.css" />
     <Content Include="Members.aspx" />
     <Content Include="Accounts\ModifierProfil.aspx" />
     <Content Include="Accounts\Profil.aspx" />
