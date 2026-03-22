@@ -6,6 +6,9 @@ obj/
 *.suo
 *.cache
 *.log
+App_Data/
+*.mdf
+*.ldf
 
 ## NuGet ##
 packages/
