@@ -16,7 +16,7 @@ namespace lavaCloneWF
         private static SqlConnection GetConnection()
         {
             string cs = ConfigurationManager
-                .ConnectionStrings["FriendbookDb"]
+                .ConnectionStrings["DefaultConnection"]
                 .ConnectionString;
 
             return new SqlConnection(cs);
