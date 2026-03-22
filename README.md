@@ -104,6 +104,12 @@ Junior Full-Stack Developer
 
 ---
 
+## 🌐 Live Demo
+
+[View the live project](http://friendbook-clone.somee.com)
+
+---
+
 ## ⭐ GitHub
 
 If you like this project, feel free to ⭐ the repository!
