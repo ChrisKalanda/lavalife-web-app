@@ -7,55 +7,72 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="auth-wrapper profile-page">
+    <link href="<%= ResolveUrl("~/Content/auth-premium.css") %>" rel="stylesheet" />
 
-        <div class="auth-card">
+    <div class="app-page profile-view-page">
+        <div class="app-shell">
 
-            <!-- Colonne gauche (style Lavalife comme Login/Register) -->
-            <div class="auth-left profile-left">
-            
-                <h2>Mon profil</h2>
-                <p>
-                    Consultez et vérifiez les informations de votre compte.<br />
-                    Lavalife Édition.
+            <div class="app-hero">
+                <div class="app-badge">Compte utilisateur</div>
+                <h1 class="app-title">Mon profil</h1>
+                <p class="app-subtitle">
+                    Consultez et vérifiez les informations de votre compte. Lavalife Édition.
                 </p>
             </div>
 
-            <!-- Colonne droite : infos du profil -->
-            <div class="auth-right">
+            <div class="premium-card">
+                <div class="section-title">Détails du profil</div>
 
-                <h3>Détails du profil</h3>
+                <asp:Panel ID="pnlProfile" runat="server" CssClass="profile-details-grid">
 
-                <asp:Panel ID="pnlProfile" runat="server" CssClass="profile-wrapper">
-                    <p><strong>Nom d'utilisateur : </strong>
-                       <asp:Label ID="lblUsername" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Nom d'utilisateur</span>
+                        <span class="info-value"><asp:Label ID="lblUsername" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Sexe : </strong>
-                       <asp:Label ID="lblSex" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Sexe</span>
+                        <span class="info-value"><asp:Label ID="lblSex" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Groupe d'âge : </strong>
-                       <asp:Label ID="lblAgeGroup" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Groupe d'âge</span>
+                        <span class="info-value"><asp:Label ID="lblAgeGroup" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Groupe ethnique : </strong>
-                       <asp:Label ID="lblGroupName" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Groupe ethnique</span>
+                        <span class="info-value"><asp:Label ID="lblGroupName" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Raison : </strong>
-                       <asp:Label ID="lblReason" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Raison</span>
+                        <span class="info-value"><asp:Label ID="lblReason" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Intérêts : </strong>
-                       <asp:Label ID="lblInterests" runat="server" /></p>
+                    <div class="info-block">
+                        <span class="info-label">Ville</span>
+                        <span class="info-value"><asp:Label ID="lblCity" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Ville : </strong>
-                       <asp:Label ID="lblCity" runat="server" /></p>
+                    <div class="info-block info-block-full">
+                        <span class="info-label">Intérêts</span>
+                        <span class="info-value"><asp:Label ID="lblInterests" runat="server" /></span>
+                    </div>
 
-                    <p><strong>Membre depuis : </strong>
-                       <asp:Label ID="lblCreatedAt" runat="server" /></p>
+                    <div class="info-block info-block-full">
+                        <span class="info-label">Membre depuis</span>
+                        <span class="info-value"><asp:Label ID="lblCreatedAt" runat="server" /></span>
+                    </div>
+
                 </asp:Panel>
 
+                <div class="quick-actions" style="margin-top:22px;">
+                    <a href="~/Accounts/ModifierProfil.aspx" runat="server" class="premium-btn">Modifier mon profil</a>
+                </div>
             </div>
 
         </div>
-
     </div>
 
 </asp:Content>

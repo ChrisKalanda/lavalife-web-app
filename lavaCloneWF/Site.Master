@@ -33,48 +33,76 @@
         .header a:hover {
             text-decoration: underline;
         }
-
-       
         .landing {
-            min-height: calc(100vh - 40px);
-            display: flex;
-            align-items: stretch;
-        }
-        .landing-left {
-            flex: 1;
-            background: #b0001a;
-            color: white;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .landing-left h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        .landing-left p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        .landing-right {
-            flex: 1;
-            background: linear-gradient(180deg, #607D8B, #CFD8DC);
-            color: white;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-        .landing-right h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        .landing-right p {
-            font-size: 17px;
-            margin-bottom: 30px;
-        }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 620px;
+}
+
+.landing-left {
+    position: relative;
+    color: #fff;
+    min-height: 80%;
+    padding: 54px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.34)), url('/Content/lavalifeAcceuil.png') center center / cover no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+
+.landing-right {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #fff;
+    padding: 54px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 18px;
+    margin-bottom: 24px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.landing-left h1,
+.landing-right h2 {
+    margin: 0 0 18px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.landing-left h1 {
+    font-size: 48px;
+}
+
+.landing-right h2 {
+    font-size: 40px;
+}
+
+.landing-left p,
+.landing-right p {
+    margin: 0 0 18px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.92);
+}
+
+.landing-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
 
         .btn-main-big {
             display: inline-block;

@@ -70,10 +70,10 @@ GO
 INSERT INTO dbo.Members
     (Username, PasswordHash, Sex, AgeGroup, GroupName, Reason, Interests, City)
 VALUES
-    ('chris',   '1234', 'M', '26-35', 'African', 'serious',   'Music, coding, travel',   'Montreal'),
-    ('sarah',   '1234', 'F', '18-25', 'Canadian', 'friendship', 'Movies, coffee, art',     'Laval'),
-    ('amina',   '1234', 'F', '26-35', 'African', 'serious',   'Reading, fitness, cooking','Longueuil'),
-    ('kevin',   '1234', 'M', '36-45', 'Caribbean', 'chat',    'Sports, tech, gaming',     'Brossard');
+    ('chris',   '1234', 'M', '26-35', 'Africain', 'Relation sérieuse',   'Musique, coder, voyager',   'Montreal'),
+    ('sarah',   '1234', 'F', '18-25', 'Caucasien', 'Amitié', 'Films, café, art',     'Laval'),
+    ('amina',   '1234', 'F', '26-35', 'Africain', 'Relation sérieuse',   'Lire, fitness, cuisiner','Longueuil'),
+    ('kevin',   '1234', 'M', '36-45', 'Latino', 'Rencontre',    'Sports, tech, Jeux-vidéos',     'Brossard');
 GO
 
 /* =========================================================

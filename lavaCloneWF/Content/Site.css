@@ -1,7 +1,11 @@
-﻿/* ===== LAYOUT GÉNÉRAL TYPE LOGIN / REGISTER ===== */
+﻿/* =========================================================
+   SITE.CSS
+   ========================================================= */
 
-/* Wrapper commun à toutes les pages "modernes" */
-.page-shell {
+/* ===== LAYOUT GÉNÉRAL LEGACY ===== */
+/* À utiliser seulement pour les anciennes pages non premium */
+
+.legacy-page-shell {
     min-height: calc(100vh - 80px);
     display: flex;
     background: #050608;
@@ -9,16 +13,14 @@
     font-family: Arial, sans-serif;
 }
 
-   
-    .page-shell .page-left {
+    .legacy-page-shell .legacy-page-left {
         position: relative;
         background: linear-gradient(180deg, rgba(216,27,96,0.92), rgba(176,23,79,0.92)), url('/Content/lavalifeAcceuil.png') center no-repeat;
         color: #fff;
         padding: 60px 40px;
     }
 
-    
-    .page-shell .page-right {
+    .legacy-page-shell .legacy-page-right {
         flex: 1;
         display: flex;
         align-items: center;
@@ -26,8 +28,7 @@
         padding: 40px 20px;
     }
 
-
-.page-card {
+.legacy-page-card {
     width: 100%;
     max-width: 460px;
     background: #111;
@@ -36,22 +37,19 @@
     box-shadow: 0 18px 40px rgba(0, 0, 0, .75);
 }
 
-    
-    .page-card h1,
-    .page-card h2 {
+    .legacy-page-card h1,
+    .legacy-page-card h2 {
         color: #fff;
         margin-bottom: 8px;
         font-size: 24px;
         font-weight: 700;
     }
 
-
 .page-subtitle {
     color: #bbb;
     font-size: 13px;
     margin-bottom: 24px;
 }
-
 
 .form-group {
     margin-bottom: 16px;
@@ -64,12 +62,11 @@
         color: #f5f5f5;
     }
 
-
-.page-card input[type="text"],
-.page-card input[type="password"],
-.page-card input[type="email"],
-.page-card textarea,
-.page-card select {
+.legacy-page-card input[type="text"],
+.legacy-page-card input[type="password"],
+.legacy-page-card input[type="email"],
+.legacy-page-card textarea,
+.legacy-page-card select {
     width: 100%;
     padding: 10px 12px;
     border-radius: 6px;
@@ -80,11 +77,10 @@
     box-sizing: border-box;
 }
 
-
-.page-card .btn-main,
-.page-card input[type="submit"],
-.page-card input[type="button"],
-.page-card button {
+.legacy-page-card .btn-main,
+.legacy-page-card input[type="submit"],
+.legacy-page-card input[type="button"],
+.legacy-page-card button {
     display: inline-block;
     width: 100%;
     margin-top: 8px;
@@ -111,21 +107,19 @@
     margin-bottom: 8px;
 }
 
-
 #txtBody {
     resize: none;
     height: 120px;
 }
 
-/* ========================================================= */
-/*            PROFIL – mise en page type Login/Register      */
-/* ========================================================= */
+/* =========================================================
+   PROFIL LEGACY
+   ========================================================= */
 
-.profile-page .page-card {
-    max-width: 900px; /* un peu plus large pour afficher les champs */
+.profile-page .legacy-page-card {
+    max-width: 900px;
 }
 
-/* Liste des champs (label / valeur sur la même ligne) */
 .profile-panel p {
     display: flex;
     justify-content: space-between;
@@ -143,15 +137,14 @@
     color: #fff;
 }
 
-/* ========================================================= */
-/*            MEMBERS – même look Login/Register             */
-/* ========================================================= */
+/* =========================================================
+   MEMBERS LEGACY
+   ========================================================= */
 
-.members-page .page-card {
+.members-page .legacy-page-card {
     max-width: 900px;
 }
 
-/* Ligne d’un membre */
 .member-row {
     display: grid;
     grid-template-columns: 60px 1fr auto;
@@ -190,22 +183,20 @@
     width: auto;
 }
 
-/* ========================================================= */
-/*            SEARCH – filtre + résultats                    */
-/* ========================================================= */
+/* =========================================================
+   SEARCH LEGACY
+   ========================================================= */
 
-.search-page .page-card {
+.search-page .legacy-page-card {
     max-width: 980px;
 }
 
-/* grille de filtres */
 .search-page .form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 20px;
 }
 
-/* Champ Ville sur toute la largeur */
 .search-page .form-group-full {
     grid-column: 1 / -1;
 }
@@ -214,7 +205,6 @@
     margin-top: 32px;
 }
 
-/* tableau de résultats */
 .results-table {
     width: 100%;
     border-collapse: collapse;
@@ -233,13 +223,12 @@
         font-weight: 600;
     }
 
-/* ========================================================= */
-/*            PAGES "MODIFIER PROFIL", INBOX, COMPOSE        */
-/*            (elles réutilisent aussi page-shell / card)    */
-/* ========================================================= */
+/* =========================================================
+   AUTRES PAGES LEGACY
+   ========================================================= */
 
-.edit-profile-page .page-card,
-.inbox-page .page-card,
-.compose-page .page-card {
+.edit-profile-page .legacy-page-card,
+.inbox-page .legacy-page-card,
+.compose-page .legacy-page-card {
     max-width: 700px;
 }

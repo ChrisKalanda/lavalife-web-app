@@ -69,15 +69,6 @@ namespace lavaCloneWF.Account
         protected global::System.Web.UI.WebControls.Label lblReason;
 
         /// <summary>
-        /// lblInterests control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInterests;
-
-        /// <summary>
         /// lblCity control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace lavaCloneWF.Account
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCity;
+
+        /// <summary>
+        /// lblInterests control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInterests;
 
         /// <summary>
         /// lblCreatedAt control.
