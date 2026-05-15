@@ -44,17 +44,16 @@ namespace lavaCloneWF.Messages
             lblFrom.Text = HttpUtility.HtmlEncode(msg.SenderName);
             lblDate.Text = msg.SentAt.ToString("yyyy-MM-dd HH:mm");
 
-            
             string safeBody = HttpUtility.HtmlEncode(msg.Body ?? "");
             litBody.Text = safeBody.Replace("\r\n", "<br/>").Replace("\n", "<br/>");
 
-            
             lnkReply.NavigateUrl = ResolveUrl("~/Messages/Compose.aspx?to=" + msg.FromId);
+
+            if (!msg.IsRead)
+                Data.MarkMessageRead(msgId);
 
             pnlOk.Visible = true;
             pnlError.Visible = false;
-
-          
         }
 
         private void ShowError(string message)

@@ -1,109 +1,71 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="lavaCloneWF.Site" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="lavaCloneWF.Site" %>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Friendbook - Lavalife Style</title>
-
+    <link href="<%= ResolveUrl("~/Content/bootstrap.min.css") %>" rel="stylesheet" />
     <style>
         body { margin: 0; background: #F5F5F5; font-family: Arial; }
 
-        /* HEADER */
-        .header {
-            background: #d70023;
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header .logo {
-            font-size: 26px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .header a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-            font-size: 15px;
-            font-weight: bold;
-        }
-        .header a:hover {
-            text-decoration: underline;
-        }
+        /* NAVBAR */
+        .site-navbar { background: #d70023; }
+        .site-navbar .navbar-brand { font-size: 22px; font-weight: bold; letter-spacing: 2px; }
+        .site-navbar .nav-link { font-weight: bold; font-size: 15px; }
+        .site-navbar .nav-link:hover { text-decoration: underline; }
+
+        /* LANDING */
         .landing {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 620px;
-}
-
-.landing-left {
-    position: relative;
-    color: #fff;
-    min-height: 80%;
-    padding: 54px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: linear-gradient(rgba(15, 23, 42, 0.28), rgba(15, 23, 42, 0.34)), url('/Content/lavalifeAcceuil.png') center center / cover no-repeat;
-    background-size: cover;
-    background-position:center;
-}
-
-.landing-right {
-    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
-    color: #fff;
-    padding: 54px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.landing-badge {
-    display: inline-block;
-    width: fit-content;
-    padding: 10px 18px;
-    margin-bottom: 24px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.landing-left h1,
-.landing-right h2 {
-    margin: 0 0 18px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: #fff;
-}
-
-.landing-left h1 {
-    font-size: 48px;
-}
-
-.landing-right h2 {
-    font-size: 40px;
-}
-
-.landing-left p,
-.landing-right p {
-    margin: 0 0 18px;
-    font-size: 18px;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.92);
-}
-
-.landing-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-}
-
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 620px;
+        }
+        .landing-left {
+            position: relative;
+            color: #fff;
+            min-height: 80%;
+            padding: 54px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(rgba(15,23,42,0.28), rgba(15,23,42,0.34)), url('/Content/lavalifeAcceuil.png') center center / cover no-repeat;
+        }
+        .landing-right {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: #fff;
+            padding: 54px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .landing-badge {
+            display: inline-block;
+            width: fit-content;
+            padding: 10px 18px;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .landing-left h1, .landing-right h2 {
+            margin: 0 0 18px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #fff;
+        }
+        .landing-left h1 { font-size: 48px; }
+        .landing-right h2 { font-size: 40px; }
+        .landing-left p, .landing-right p {
+            margin: 0 0 18px;
+            font-size: 18px;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.92);
+        }
+        .landing-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
         .btn-main-big {
             display: inline-block;
             padding: 15px 45px;
@@ -114,31 +76,23 @@
             border: none;
             cursor: pointer;
         }
-        .btn-red {
-            background: #ff0000;
-            color: white;
-        }
-        .btn-white {
-            background: white;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-        }
+        .btn-red { background: #ff0000; color: white; }
+        .btn-white { background: white; color: #ff0000; border: 2px solid #ff0000; }
 
-        /* CONTENT */
+        /* CONTENT (fallback) */
         .content {
-            width: 900px;
+            max-width: 960px;
+            width: 100%;
             margin: 40px auto;
             background: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px #ccc;
+            box-sizing: border-box;
         }
 
         /* DASHBOARD */
-        .dashboard-title {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
+        .dashboard-title { font-size: 26px; margin-bottom: 10px; }
         .dashboard-menu a {
             display: inline-block;
             margin: 5px 10px 5px 0;
@@ -159,39 +113,66 @@
             font-size: 14px;
             margin-top: 30px;
         }
+
+        /* RESPONSIVE — Landing */
+        @media (max-width: 900px) {
+            .landing { grid-template-columns: 1fr; min-height: auto; }
+            .landing-left { min-height: 260px; padding: 30px 24px; }
+            .landing-right { padding: 30px 24px; }
+            .landing-left h1 { font-size: 34px; }
+            .landing-right h2 { font-size: 30px; }
+        }
+        @media (max-width: 576px) {
+            .landing-left { display: none; }
+            .landing-right { padding: 24px 16px; }
+            .landing-right h2 { font-size: 26px; }
+            .content { padding: 20px 16px; margin: 20px auto; }
+            .btn-main-big { padding: 12px 28px; font-size: 16px; width: 100%; text-align: center; }
+            .landing-actions { flex-direction: column; }
+        }
     </style>
 </head>
 
 <body>
     <form runat="server">
 
-        <!-- HEADER (sera caché sur la landing si pas connecté) -->
-        <asp:Panel ID="pnlHeader" runat="server" CssClass="header">
-            <div class="logo">
-                <a href="~/Default.aspx" runat="server" style="color:white;text-decoration:none;">
-                    Lavalife
-                </a>
-            </div>
+        <asp:Panel ID="pnlHeader" runat="server">
+            <nav class="navbar navbar-expand-md navbar-dark site-navbar">
+                <div class="container-fluid px-3">
 
-            <div>
-                <a href="~/Default.aspx" runat="server">Accueil</a>
-                <a href="~/Default.aspx" runat="server">Mon espace</a>
-                <a href="~/Members.aspx" runat="server">Membres</a>
-                <a href="~/Search.aspx" runat="server">Recherche</a>
-                <a href="~/Messages/Inbox.aspx" runat="server">Messages</a>
-                <a href="~/Accounts/Profil.aspx" runat="server">Profil</a>
-                <a href="~/Accounts/ModifierProfil.aspx" runat="server">Modifier</a>
-            </div>
+                    <a class="navbar-brand" href="~/Default.aspx" runat="server">Lavalife</a>
+
+                    <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navMain"
+                            aria-controls="navMain"
+                            aria-expanded="false"
+                            aria-label="Ouvrir le menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navMain">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" href="~/Default.aspx" runat="server">Accueil</a>
+                            <a class="nav-link" href="~/Members.aspx" runat="server">Membres</a>
+                            <a class="nav-link" href="~/Search.aspx" runat="server">Recherche</a>
+                            <a class="nav-link" href="~/Messages/Inbox.aspx" runat="server">Messages</a>
+                            <a class="nav-link" href="~/Accounts/Profil.aspx" runat="server">Profil</a>
+                            <a class="nav-link" href="~/Accounts/ModifierProfil.aspx" runat="server">Modifier</a>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
         </asp:Panel>
 
-        <!-- Contenu spécifique à chaque page -->
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 
-        <!-- FOOTER -->
         <asp:Panel ID="pnlFooter" runat="server" CssClass="footer">
             © 2025 Friendbook - Projet Lavalife
         </asp:Panel>
 
     </form>
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>"></script>
 </body>
 </html>

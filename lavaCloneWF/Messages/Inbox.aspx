@@ -42,14 +42,14 @@
 
                                 <td>
                                     <a href='<%# ResolveUrl("~/Messages/Read.aspx?id=" + Eval("Id")) %>'>
-                                        <%# Eval("Body") %>
+                                        <%# Eval("Preview") %>
                                     </a>
                                 </td>
 
                                 <td><%# Eval("SentAt", "{0:yyyy-MM-dd HH:mm}") %></td>
 
                                 <td class="message-actions-cell">
-                                    <a href='<%# ResolveUrl("~/Messages/Read.aspx?id=" + Eval("Id")) %>'>Lire</a>
+                                    <%# GetReadAction(Eval("Id"), Eval("IsRead")) %>
                                     <span class="action-separator">|</span>
                                     <a href='<%# ResolveUrl("~/Messages/Compose.aspx?to=" + Eval("FromId")) %>'>Répondre</a>
                                     <span class="action-separator">|</span>

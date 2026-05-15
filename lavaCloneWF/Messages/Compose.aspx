@@ -18,17 +18,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 40px 0;
+        padding: 40px 16px;
+        box-sizing: border-box;
     }
 
     /* --- CARD --- */
     .compose-card {
         background: #000;
-        width: 420px;
+        width: 100%;
+        max-width: 420px;
         padding: 30px 40px;
         border-radius: 14px;
         box-shadow: 0 0 25px rgba(0,0,0,0.6);
         color: white;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 480px) {
+        .compose-card {
+            padding: 24px 20px;
+            border-radius: 10px;
+        }
+        .compose-wrapper {
+            align-items: flex-start;
+            padding-top: 24px;
+        }
     }
 
     .compose-card h2 {

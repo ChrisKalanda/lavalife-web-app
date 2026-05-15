@@ -46,12 +46,23 @@ namespace lavaCloneWF.Messages
                 m.Id,
                 m.FromId,
                 m.Body,
+                Preview = m.Body != null && m.Body.Length > 80
+                    ? m.Body.Substring(0, 80) + "…"
+                    : m.Body ?? "",
                 m.SentAt,
+                m.IsRead,
                 SenderName = mapNom[m.FromId]
             }).ToList();
 
             rptInbox.DataSource = view;
             rptInbox.DataBind();
+        }
+
+        protected string GetReadAction(object id, object isRead)
+        {
+            if (isRead != null && (bool)isRead)
+                return "<span class=\"msg-read-label\">Lu</span>";
+            return string.Format("<a href='{0}'>Lire</a>", ResolveUrl("~/Messages/Read.aspx?id=" + id));
         }
 
         // ✅ GESTION DU SUPPRIMER
